@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "battlebotanist",
+	"version": "${version}",
+	"name": "Battle Botanist",
+	"description": "A mod that adds war plants!",
+	"authors": [
+		"Repook"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/battlebotanist/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "net.repook.battlebotanist.BattleBotanistMod"
+		],
+		"fabric-datagen": [
+			"net.repook.battlebotanist.BattleBotanistModDataGenerator"
+		],
+		"client": [
+			"net.repook.battlebotanist.BattleBotanistModClient"
+		]
+	},
+	"mixins": [
+		"battlebotanist.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
