@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "battlebotanist:block/magic_stick_crop_stage5"
+  }
+}

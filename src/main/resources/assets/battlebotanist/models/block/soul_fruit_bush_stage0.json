@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "battlebotanist:block/soul_fruit_bush_stage0"
+  }
+}

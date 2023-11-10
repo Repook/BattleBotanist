@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "item": "minecraft:melon"
+    },
+    "S": {
+      "item": "battlebotanist:magic_stick"
+    }
+  },
+  "pattern": [
+    "MSM",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "battlebotanist:melon_mallet"
+  },
+  "show_notification": true
+}

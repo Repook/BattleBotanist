@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "battlebotanist:block/soul_fruit_bush_stage1"
+  }
+}

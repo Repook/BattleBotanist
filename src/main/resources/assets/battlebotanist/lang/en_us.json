@@ -1,0 +1,22 @@
+{
+  "item.battlebotanist.melon_mallet": "Melon Mallet",
+  "item.battlebotanist.cactus_sentry_spawn_egg": "Prickly Protecter Spawn Egg",
+
+  "entity.battlebotanist.cactus_sentry": "Prickly Protecter",
+
+  "block.battlebotanist.soul_fruit_bush": "Soul Fruit Bush",
+  "item.battlebotanist.soul_fruit": "Soul Fruit",
+
+  "item.battlebotanist.floral_firearm": "Floral Firearm",
+
+  "item.battlebotanist.magic_stick_seed": "Magical Stick Seed",
+  "item.battlebotanist.magic_stick": "Magical Stick",
+
+  "itemgroup.battle_botanist_group": "Battle Botanist",
+
+  "tooltip.battlebotanist.melon_mallet.tooltip.shift": "A Hammer That Hits Enemies Into The Air!",
+  "tooltip.battlebotanist.melon_mallet.tooltip": "Press §eSHIFT§r for more info.",
+
+  "tooltip.battlebotanist.floral_firearm.tooltip.shift": "A Weak Gun That Poisons Enemies",
+  "tooltip.battlebotanist.floral_firearm.tooltip": "Press §eSHIFT§r for more info."
+}

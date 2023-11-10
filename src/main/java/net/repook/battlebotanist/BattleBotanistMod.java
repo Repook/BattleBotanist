@@ -2,6 +2,12 @@ package net.repook.battlebotanist;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.repook.battlebotanist.block.ModBlocks;
+import net.repook.battlebotanist.entity.ModEntities;
+import net.repook.battlebotanist.item.ModItemGroup;
+import net.repook.battlebotanist.item.ModItems;
+import net.repook.battlebotanist.util.ModRegistries;
+import net.repook.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,7 +17,11 @@ public class BattleBotanistMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
-		LOGGER.info("Hello Fabric world!");
+		ModItemGroup.registerItemGroup();
+		ModBlocks.registerModBlocks();
+		ModItems.registerModItems();
+		ModEntities.registerModEntities();
+		ModRegistries.registerModStuffs();
+		ModWorldGeneration.generateModWorldGeneration();
 	}
 }

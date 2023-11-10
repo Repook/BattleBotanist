@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "battlebotanist:block/soul_fruit_bush_stage0"
+    },
+    "age=1": {
+      "model": "battlebotanist:block/soul_fruit_bush_stage1"
+    }
+  }
+}

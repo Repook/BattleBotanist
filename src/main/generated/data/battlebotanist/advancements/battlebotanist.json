@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "has_magic_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "battlebotanist:magic_stick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "battlebotanist:item/magic_stick",
+    "description": {
+      "text": "Obtain A Magical Stick."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "battlebotanist:magic_stick"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Battle Botanist!"
+    }
+  },
+  "requirements": [
+    [
+      "has_magic_stick"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
