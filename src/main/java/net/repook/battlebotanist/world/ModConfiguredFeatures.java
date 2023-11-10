@@ -1,20 +1,14 @@
-package net.repook.world;
+package net.repook.battlebotanist.world;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.repook.battlebotanist.BattleBotanistMod;
 import net.repook.battlebotanist.block.ModBlocks;
 import net.repook.battlebotanist.block.custom.SoulFruitBushBlock;
-
-import java.util.List;
 
 public class ModConfiguredFeatures {
 

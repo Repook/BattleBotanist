@@ -1,4 +1,4 @@
-package net.repook.world;
+package net.repook.battlebotanist.world;
 
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;

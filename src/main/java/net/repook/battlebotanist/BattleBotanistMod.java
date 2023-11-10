@@ -7,7 +7,7 @@ import net.repook.battlebotanist.entity.ModEntities;
 import net.repook.battlebotanist.item.ModItemGroup;
 import net.repook.battlebotanist.item.ModItems;
 import net.repook.battlebotanist.util.ModRegistries;
-import net.repook.world.gen.ModWorldGeneration;
+import net.repook.battlebotanist.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
