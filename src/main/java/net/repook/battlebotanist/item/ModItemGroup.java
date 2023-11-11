@@ -27,7 +27,7 @@ public class ModItemGroup {
                         entries.add(ModItems.FLORAL_FIREARM);
 
 
-
+                        entries.add(ModItems.MAGIC_CACTUS_SEEDLING);
                         entries.add(ModItems.CACTUS_SENTRY_SPAWN_EGG);
 
                     }).build());

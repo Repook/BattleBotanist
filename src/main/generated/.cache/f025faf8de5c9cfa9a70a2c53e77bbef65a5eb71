@@ -1,2 +1,9 @@
-// 1.20.1	2023-11-07T20:43:55.8117404	Battle Botanist/Model Definitions
+// 1.20.1	2023-11-11T16:34:03.8979145	Battle Botanist/Model Definitions
+73f39a62593bee396ef83af698d48e14e9eb0186 assets\battlebotanist\models\block\cactus_sentry_crop_stage3.json
+d73bda7dabdf527ef9b48174a6767a8b6196b3e1 assets\battlebotanist\models\block\cactus_sentry_crop_stage2.json
+e4c6fa4e910553314fe3c0c6bac56fc9c5af603b assets\battlebotanist\blockstates\cactus_sentry_crop.json
+e0a881775d9470fc6c19a56c11a39bcbfd7139bc assets\battlebotanist\models\block\cactus_sentry_crop_stage1.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\battlebotanist\models\item\cactus_sentry_spawn_egg.json
+5bc65c885ec92fbdee92366d52ddde8376461e07 assets\battlebotanist\models\item\magic_cactus_seedling.json
+639acc309939198b7823667d190b3e6b75cf890d assets\battlebotanist\models\block\cactus_sentry_crop_stage0.json
+b9fdf68c89ac0440d6c815365c54422ea26572d5 assets\battlebotanist\models\block\cactus_sentry_crop_stage4.json

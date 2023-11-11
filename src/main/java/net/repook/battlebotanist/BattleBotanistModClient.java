@@ -16,6 +16,8 @@ public class BattleBotanistModClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MAGIC_STICK_CROP, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CACTUS_SENTRY_CROP, RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SOUL_FRUIT_BUSH, RenderLayer.getCutout());
 
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.SEED_PROJECTILE, SeedProjectileModel::getTexturedModelData);

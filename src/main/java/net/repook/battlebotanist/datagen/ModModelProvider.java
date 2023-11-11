@@ -7,6 +7,7 @@ import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Model;
 import net.minecraft.util.Identifier;
 import net.repook.battlebotanist.block.ModBlocks;
+import net.repook.battlebotanist.block.custom.CactusSentryCropBlock;
 import net.repook.battlebotanist.block.custom.MagicStickCropBlock;
 import net.repook.battlebotanist.item.ModItems;
 
@@ -21,6 +22,8 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         //blockStateModelGenerator.registerCrop(ModBlocks.MAGIC_STICK_CROP, MagicStickCropBlock.AGE,
                 //0,1,2,3,4,5,6);
+        blockStateModelGenerator.registerCrop(ModBlocks.CACTUS_SENTRY_CROP, CactusSentryCropBlock.AGE,
+                0,1,2,3,4);
 
     }
 

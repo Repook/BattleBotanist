@@ -11,6 +11,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.repook.battlebotanist.BattleBotanistMod;
+import net.repook.battlebotanist.block.custom.CactusSentryCropBlock;
 import net.repook.battlebotanist.block.custom.MagicStickCropBlock;
 import net.repook.battlebotanist.block.custom.SoulFruitBushBlock;
 
@@ -18,6 +19,9 @@ public class ModBlocks {
 
 public static final Block MAGIC_STICK_CROP = registerBlockWithoutBlockItem("magic_stick_crop",
         new MagicStickCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+    public static final Block CACTUS_SENTRY_CROP = registerBlockWithoutBlockItem("cactus_sentry_crop",
+            new CactusSentryCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
     public static final Block SOUL_FRUIT_BUSH = registerBlock("soul_fruit_bush",
             new SoulFruitBushBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));

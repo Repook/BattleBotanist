@@ -14,8 +14,9 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> SOUL_BUSH_KEY = registerKey("soul_bush");
     public static void bootstrap (Registerable<ConfiguredFeature<?, ?>> context){
-    register(context,SOUL_BUSH_KEY,Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(64,6,2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SOUL_FRUIT_BUSH.getDefaultState().with(SoulFruitBushBlock.AGE,1))))));
+        /*    register(context,SOUL_BUSH_KEY,Feature.RANDOM_PATCH, new RandomPatchFeatureConfig(64,6,2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SOUL_FRUIT_BUSH.getDefaultState().with(SoulFruitBushBlock.AGE,1))))));*/
+
     }
 
 

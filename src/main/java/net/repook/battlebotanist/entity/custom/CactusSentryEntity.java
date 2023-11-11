@@ -11,7 +11,6 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.mob.*;
-import net.minecraft.entity.passive.LlamaEntity;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 
@@ -24,6 +23,7 @@ public class CactusSentryEntity extends MobEntity implements RangedAttackMob {
     boolean spike;
     public CactusSentryEntity(EntityType<? extends MobEntity> entityType, World world) {
         super(entityType, world);
+        this.setPersistent();
     }
 
     @Override
@@ -75,9 +75,9 @@ public class CactusSentryEntity extends MobEntity implements RangedAttackMob {
         this.getWorld().spawnEntity(spikeProjectileEntity);
         this.spike = true;
     }
-    void setSpike(boolean spike) {
-        this.spike = spike;
-    }
+
+
+
     @Override
     public void attack(LivingEntity target, float pullProgress) {
         this.shootAt(target);

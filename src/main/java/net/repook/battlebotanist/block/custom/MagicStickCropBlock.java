@@ -52,33 +52,9 @@ public class MagicStickCropBlock extends CropBlock {
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(AGE);
     }
-@Override
-    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        super.grow(world, random, pos, state);
-        state = world.getBlockState(pos);
-        if (!this.isMature(state)) return;
-        MobEntity mobEntity = ModEntities.CACTUS_SENTRY.create(world);
-        //System.out.println(mobEntity);
-        if (mobEntity == null) return;
-        //System.out.println("Working??");
-        mobEntity.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 360.0F, 0.0F);
-        world.spawnEntity(mobEntity);
-        world.setBlockState(pos, Blocks.AIR.getDefaultState());
-    }
 
-    @Override
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        super.grow(world, random, pos, state);
-        state = world.getBlockState(pos);
-        if (!this.isMature(state)) return;
-        MobEntity mobEntity = ModEntities.CACTUS_SENTRY.create(world);
-        //System.out.println(mobEntity);
-        if (mobEntity == null) return;
-        //System.out.println("Working??");
-        mobEntity.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 360.0F, 0.0F);
-        world.spawnEntity(mobEntity);
-        world.setBlockState(pos, Blocks.AIR.getDefaultState());
-    }
+
+
 }
 
 /*

@@ -33,6 +33,9 @@ public class ModItems {
 
     public static final Item MAGIC_STICK_SEED = registerItem("magic_stick_seed",
             new AliasedBlockItem(ModBlocks.MAGIC_STICK_CROP, new FabricItemSettings()));
+
+    public static final Item MAGIC_CACTUS_SEEDLING = registerItem("magic_cactus_seedling",
+            new AliasedBlockItem(ModBlocks.CACTUS_SENTRY_CROP, new FabricItemSettings()));
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(BattleBotanistMod.MOD_ID,name),item);
     }

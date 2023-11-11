@@ -28,25 +28,24 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.repook.battlebotanist.entity.ModEntities;
 
-public class SpikeProjectileEntity extends PersistentProjectileEntity {
+public class SpikeProjectileEntity extends ProjectileEntity {
     private static final TrackedData<Boolean> HIT =
             DataTracker.registerData(SpikeProjectileEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private int counter = 0;
 
-    public SpikeProjectileEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world) {
-        super(entityType, world);
-    }
     public SpikeProjectileEntity(World world, CactusSentryEntity owner) {
         this(ModEntities.SPIKE_PROJECTILE, world);
         this.setOwner(owner);
         this.setPosition(owner.getX() - (double)(owner.getWidth() + 1.0f) * 0.5 * (double) MathHelper.sin(owner.bodyYaw * ((float)Math.PI / 180)), owner.getEyeY() - (double)0.1f, owner.getZ() + (double)(owner.getWidth() + 1.0f) * 0.5 * (double)MathHelper.cos(owner.bodyYaw * ((float)Math.PI / 180)));
     }
 
+    public SpikeProjectileEntity(EntityType<SpikeProjectileEntity> EntityType, World world) {
+        super(EntityType,world);
+    }
+
     public void tick() {
         super.tick();
-        if(this.inGround) {
-            this.discard();
-        }
+
         if (this.dataTracker.get(HIT)) {
             if (this.age >= counter) {
                 this.discard();
@@ -102,10 +101,7 @@ public class SpikeProjectileEntity extends PersistentProjectileEntity {
         }
 
     }
-    @Override
-    protected ItemStack asItemStack() {
-        return ItemStack.EMPTY;
-    }
+
     @Override
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
@@ -135,6 +131,5 @@ public class SpikeProjectileEntity extends PersistentProjectileEntity {
     @Override
     protected void initDataTracker() {
         this.dataTracker.startTracking(HIT, false);
-        super.initDataTracker();
     }
 }
