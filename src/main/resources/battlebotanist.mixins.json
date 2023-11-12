@@ -3,7 +3,8 @@
 	"package": "net.repook.battlebotanist.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-      "BattleBotanistMixin"
+      "BattleBotanistMixin",
+      "BrewingRecipeRegistryMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

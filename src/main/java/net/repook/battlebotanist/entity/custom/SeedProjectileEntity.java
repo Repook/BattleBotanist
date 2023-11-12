@@ -58,6 +58,16 @@ public class SeedProjectileEntity extends PersistentProjectileEntity {
         this.refreshPositionAndAngles(d0, d1, d2, this.getYaw(), this.getPitch());
     }
 
+    public SeedProjectileEntity(World world, CactusSentryEntity cactusSentryEntity) {
+        super(ModEntities.SEED_PROJECTILE, world);
+        setOwner(cactusSentryEntity);
+        BlockPos blockpos = cactusSentryEntity.getBlockPos();
+        double d0 = (double) blockpos.getX() + 0.5D;
+        double d1 = (double) blockpos.getY() + 1.75D;
+        double d2 = (double) blockpos.getZ() + 0.5D;
+        this.refreshPositionAndAngles(d0, d1, d2, this.getYaw(), this.getPitch());
+    }
+
 
     @Override
     public void tick() {

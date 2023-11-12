@@ -33,7 +33,9 @@ public class ModEntities {
     public static final EntityType<SpikeProjectileEntity> SPIKE_PROJECTILE = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(BattleBotanistMod.MOD_ID, "spike_projectile"),
             FabricEntityTypeBuilder.<SpikeProjectileEntity>create(SpawnGroup.MISC, SpikeProjectileEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).build());
+                    .dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build());
+
+
 
     public static void registerModEntities(){
         BattleBotanistMod.LOGGER.info("Registering Mod Entities for " + BattleBotanistMod.MOD_ID);

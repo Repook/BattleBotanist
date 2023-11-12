@@ -19,5 +19,12 @@
   "tooltip.battlebotanist.melon_mallet.tooltip": "Press §eSHIFT§r for more info.",
 
   "tooltip.battlebotanist.floral_firearm.tooltip.shift": "A Weak Gun That Poisons Enemies",
-  "tooltip.battlebotanist.floral_firearm.tooltip": "Press §eSHIFT§r for more info."
+  "tooltip.battlebotanist.floral_firearm.tooltip": "Press §eSHIFT§r for more info.",
+
+  "effect.battlebotanist.melon": "Melon!",
+
+  "item.minecraft.potion.effect.melon_juice": "Melon Juice",
+  "item.minecraft.splash_potion.effect.melon_juice": "Throwable Melon Juice",
+  "item.minecraft.lingering_potion.effect.melon_juice": "Lingering Melon Juice",
+  "item.minecraft.tipped_arrow.effect.melon_juice": "Melon Infused Arrow"
 }
