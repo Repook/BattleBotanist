@@ -15,7 +15,7 @@
   },
   "display": {
     "announce_to_chat": true,
-    "background": "battlebotanist:item/magic_stick",
+    "background": "battlebotanist:textures/block/dirt.png",
     "description": {
       "text": "Obtain A Magical Stick."
     },

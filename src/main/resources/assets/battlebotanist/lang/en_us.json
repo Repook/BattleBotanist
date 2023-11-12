@@ -19,5 +19,7 @@
   "tooltip.battlebotanist.melon_mallet.tooltip": "Press §eSHIFT§r for more info.",
 
   "tooltip.battlebotanist.floral_firearm.tooltip.shift": "A Weak Gun That Poisons Enemies",
-  "tooltip.battlebotanist.floral_firearm.tooltip": "Press §eSHIFT§r for more info."
+  "tooltip.battlebotanist.floral_firearm.tooltip": "Press §eSHIFT§r for more info.",
+
+  "effect.battlebotanist.melon": "Melon!"
 }

@@ -4,17 +4,13 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageType;
-import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.*;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
@@ -23,7 +19,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.repook.battlebotanist.entity.ModEntities;
@@ -32,22 +27,24 @@ public class SpikeProjectileEntity extends ProjectileEntity {
     private static final TrackedData<Boolean> HIT =
             DataTracker.registerData(SpikeProjectileEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private int counter = 0;
-
-    public SpikeProjectileEntity(World world, CactusSentryEntity owner) {
-        this(ModEntities.SPIKE_PROJECTILE, world);
-        this.setOwner(owner);
-        this.setPosition(owner.getX() - (double)(owner.getWidth() + 1.0f) * 0.5 * (double) MathHelper.sin(owner.bodyYaw * ((float)Math.PI / 180)), owner.getEyeY() - (double)0.1f, owner.getZ() + (double)(owner.getWidth() + 1.0f) * 0.5 * (double)MathHelper.cos(owner.bodyYaw * ((float)Math.PI / 180)));
+    public SpikeProjectileEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
+        super(entityType, world);
+    }
+    public SpikeProjectileEntity(World world, CactusSentryEntity player) {
+        super(ModEntities.SPIKE_PROJECTILE, world);
+        setOwner(player);
+        BlockPos blockpos = player.getBlockPos();
+        double d0 = (double)blockpos.getX() + 0.5D;
+        double d1 = (double)blockpos.getY() + 1.75D;
+        double d2 = (double)blockpos.getZ() + 0.5D;
+        this.refreshPositionAndAngles(d0, d1, d2, this.getYaw(), this.getPitch());
     }
 
-    public SpikeProjectileEntity(EntityType<SpikeProjectileEntity> EntityType, World world) {
-        super(EntityType,world);
-    }
-
+    @Override
     public void tick() {
         super.tick();
-
-        if (this.dataTracker.get(HIT)) {
-            if (this.age >= counter) {
+        if(this.dataTracker.get(HIT)) {
+            if(this.age >= counter) {
                 this.discard();
             }
         }
@@ -68,7 +65,6 @@ public class SpikeProjectileEntity extends ProjectileEntity {
         double d6 = vec3.y;
         double d7 = vec3.z;
 
-
         if (this.getWorld().getStatesInBox(this.getBoundingBox()).noneMatch(AbstractBlock.AbstractBlockState::isAir)) {
             this.discard();
         } else if (this.isInsideWaterOrBubbleColumn()) {
@@ -82,22 +78,23 @@ public class SpikeProjectileEntity extends ProjectileEntity {
 
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
+        super.onEntityHit(entityHitResult);
         Entity hitEntity = entityHitResult.getEntity();
         Entity owner = this.getOwner();
 
-        if (hitEntity == owner && this.getWorld().isClient()) {
+        if(hitEntity == owner && this.getWorld().isClient()) {
             return;
         }
         this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_CRIT, SoundCategory.NEUTRAL,
                 2F, 1F);
-        LivingEntity livingentity = owner instanceof LivingEntity ? (LivingEntity) owner : null;
+
+        LivingEntity livingentity = owner instanceof LivingEntity ? (LivingEntity)owner : null;
         float damage = 2f;
         boolean hurt = hitEntity.damage(this.getDamageSources().mobProjectile(this, livingentity), damage);
         if (hurt) {
-            if (hitEntity instanceof LivingEntity livingHitEntity) {
+            if(hitEntity instanceof LivingEntity livingHitEntity) {
                 livingHitEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1), owner);
             }
-
         }
 
     }
@@ -105,9 +102,8 @@ public class SpikeProjectileEntity extends ProjectileEntity {
     @Override
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
-        if (this.getWorld().isClient()) {
+        if(this.getWorld().isClient){
             return;
-
         }
         if(hitResult.getType() == HitResult.Type.ENTITY && hitResult instanceof EntityHitResult entityHitResult) {
             Entity hit = entityHitResult.getEntity();
@@ -123,13 +119,16 @@ public class SpikeProjectileEntity extends ProjectileEntity {
         }
     }
 
-    @Override
-    public boolean hasNoGravity() {
-        return true;
-    }
 
     @Override
     protected void initDataTracker() {
-        this.dataTracker.startTracking(HIT, false);
+        this.dataTracker.startTracking(HIT,false);
+    }
+
+    @Override
+    public Packet<ClientPlayPacketListener> createSpawnPacket() {
+        return new EntitySpawnS2CPacket(this);
     }
 }
+
+

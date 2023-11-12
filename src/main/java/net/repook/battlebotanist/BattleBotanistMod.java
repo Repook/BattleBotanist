@@ -3,9 +3,11 @@ package net.repook.battlebotanist;
 import net.fabricmc.api.ModInitializer;
 
 import net.repook.battlebotanist.block.ModBlocks;
+import net.repook.battlebotanist.effect.ModEffects;
 import net.repook.battlebotanist.entity.ModEntities;
 import net.repook.battlebotanist.item.ModItemGroup;
 import net.repook.battlebotanist.item.ModItems;
+import net.repook.battlebotanist.util.ModLootTableModifiers;
 import net.repook.battlebotanist.util.ModRegistries;
 import net.repook.battlebotanist.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -23,5 +25,7 @@ public class BattleBotanistMod implements ModInitializer {
 		ModEntities.registerModEntities();
 		ModRegistries.registerModStuffs();
 		ModWorldGeneration.generateModWorldGeneration();
+		ModLootTableModifiers.modifyLootTables();
+		ModEffects.registerEffects();
 	}
 }

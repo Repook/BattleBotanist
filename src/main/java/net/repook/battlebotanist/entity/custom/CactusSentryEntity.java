@@ -62,17 +62,17 @@ public class CactusSentryEntity extends MobEntity implements RangedAttackMob {
     }
 
     private void shootAt(LivingEntity target) {
-        SpikeProjectileEntity spikeProjectileEntity = new SpikeProjectileEntity(this.getWorld(), this);
+        SeedProjectileEntity SpikeProjectileEntity = new SeedProjectileEntity(this.getWorld(), this);
         double d = target.getX() - this.getX();
-        double e = target.getBodyY(0.3333333333333333) - spikeProjectileEntity.getY();
+        double e = target.getBodyY(0.3333333333333333) - SpikeProjectileEntity.getY();
         double f = target.getZ() - this.getZ();
         double g = Math.sqrt(d * d + f * f) * 0.20000000298023224;
-        spikeProjectileEntity.setVelocity(d, e + g, f, 1.5F, 10.0F);
+        SpikeProjectileEntity.setVelocity(d, e + g, f, 1.5F, 10.0F);
         if (!this.isSilent()) {
             this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_LLAMA_SPIT, this.getSoundCategory(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
         }
 
-        this.getWorld().spawnEntity(spikeProjectileEntity);
+        this.getWorld().spawnEntity(SpikeProjectileEntity);
         this.spike = true;
     }
 
